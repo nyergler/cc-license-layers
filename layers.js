@@ -22,6 +22,10 @@ $(document).ready(function() {
 	    $("#intro").addClass("focusedtext");
 	    
 	} else if ($(this).hasClass("exploded")) {
+
+	    // do not process events for the #cc layer after exploding
+	    if ($(this).attr("id") == "cc") return;
+
 	    // focus on this layer
 	    
 	    // -- first unfocus other layers
