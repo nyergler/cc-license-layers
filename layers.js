@@ -45,7 +45,7 @@ $(document).ready(function() {
     
     $(".layer").hover(
 	function(e) {	
-	    $(".layer[id!='" + $(this)[0].id + "']").toggleClass("dimmed");
+	    $(".layer[id!='" + $(this).attr("id") + "']").toggleClass("dimmed");
 	    $(this).toggleClass("hover");
 	});
 
