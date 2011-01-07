@@ -1,0 +1,143 @@
+/**
+ *
+ * License Layers Demo CSS
+ * 
+ * copyright 2010, Creative Commons, Nathan Yergler, Alex Roberts
+ * licensed to the public under CC BY 3.0 Unported
+ * <http://creativecommons.org/licenses/by/3.0/>.
+ * 
+ **/
+
+body {
+    font-family: helvetica, ariel, sans-serif;
+}
+
+img {
+    border: none;
+}
+
+#container { 
+    position:relative; 
+    width: 960px;
+    height: 460px;
+    margin: auto;
+}
+
+#footer {
+    width: 960px;
+    margin: auto;
+    font-size: 0.7em;
+}
+
+.layer {
+    
+    position: absolute; 
+    left: 100; 
+    top: 100;
+    
+    width: 201px; 
+    height: 208px; 
+
+    opacity: 1;
+    background-color: #ffe;
+
+    -moz-box-shadow: -5px 5px 5px #888;
+    -webkit-box-shadow: -5px 5px 5px #888;
+    box-shadow: -5px 5px 5px #888;
+
+    -moz-transition: -moz-transform 1s ease-in-out, opacity 0.5s; 
+    -moz-transform: rotate(-45deg) skew(15deg, 15deg); 
+
+    -webkit-transition: -webkit-transform 1s ease-in-out, opacity 0.5s; 
+    -webkit-transform: rotate(-45deg) skew(15deg, 15deg); 
+
+    -o-transition: all 1s ease-in-out; 
+    -o-transform: rotate(-45deg) skew(15deg, 15deg); 
+}
+
+.hover {
+    -moz-box-shadow: -5px 5px 5px gold;
+    -webkit-box-shadow: -5px 5px 5px gold;
+    box-shadow: -5px 5px 5px gold;
+}
+
+.dimmed {
+    opacity: 0.15 !important;
+}
+
+.exploded {
+    border: 1px solid #666;
+    opacity: 1;
+}
+
+#cc { 
+    opacity: 1;
+    display: block;
+    border: 1px solid #666;
+    background-image : url('img/cc.png');
+    background-repeat: no-repeat;
+    background-position: center;
+
+    -moz-transition: -moz-transform 1s ease-in-out, opacity 1s ease-in-out !important;
+    -webkit-transition: -webkit-transform 1s ease-in-out, opacity 1s ease-in-out !important;
+    -o-transition: -o-transform 1s ease-in-out, opacity 1s ease-in-out !important;
+}
+
+#cc.exploded { 
+    opacity: 0 !important;
+
+    -moz-transform: rotate(-45deg) skew(15deg, 15deg) translate(10em,-10em); 
+    -webkit-transform: rotate(-45deg) skew(15deg, 15deg) translate(10em,-10em); 
+    -o-transform: rotate(-45deg) skew(15deg, 15deg) translate(10em,-10em);
+}
+
+#machine {
+    background-image: url('img/machine.svg'), url('img/machine.png');
+}
+
+#machine.exploded { 
+    -moz-transform: rotate(-45deg) skew(15deg, 15deg) translate(3em,-3em); 
+    -webkit-transform: rotate(-45deg) skew(15deg, 15deg) translate(3em,-3em); 
+    -o-transform: rotate(-45deg) skew(15deg, 15deg) translate(3em,-3em);
+}
+
+#human { 
+    background-image: url('img/human.svg'), url('img/human.png');
+}
+
+#human.exploded { 
+} 
+
+#legalcode { 
+    background-image: url('img/legalcode.svg'), url('img/legalcode.png');
+}
+
+#legalcode.exploded { 
+    -moz-transform: rotate(-45deg) skew(15deg, 15deg) translate(-3em,3em); 
+    -webkit-transform: rotate(-45deg) skew(15deg, 15deg) translate(-3em,3em); 
+    -o-transform: rotate(-45deg) skew(15deg, 15deg) translate(-3em,3em); 
+}
+
+.focused { 
+    z-index:1; 
+
+    -moz-transform: scale(2.0) translate(5em, 1em) !important;
+    -webkit-transform: scale(2.0) translate(5em, 1em) !important;
+    -o-transform: scale(2.0) translate(5em, 1em) !important;
+}
+
+.description { 
+    opacity: 0;
+    position: absolute;
+    left: 600px;
+    display: none;
+
+    -moz-transition: opacity 0.75s, display: 0.75s;
+    -webkit-transition: opacity 0.75s;
+    -o-transition: opacity 0.75s;
+} 
+
+.focusedtext { 
+    display: block;
+    opacity: 1 !important;
+}
