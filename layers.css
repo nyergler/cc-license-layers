@@ -40,6 +40,8 @@ img {
 
     opacity: 1;
     background-color: #ffe;
+    background-repeat: no-repeat;
+    background-position: center;
 
     -moz-box-shadow: -5px 5px 5px #888;
     -webkit-box-shadow: -5px 5px 5px #888;
@@ -75,8 +77,6 @@ img {
     display: block;
     border: 1px solid #666;
     background-image : url('img/cc.png');
-    background-repeat: no-repeat;
-    background-position: center;
 
     -moz-transition: -moz-transform 1s ease-in-out, opacity 1s ease-in-out !important;
     -webkit-transition: -webkit-transform 1s ease-in-out, opacity 1s ease-in-out !important;
