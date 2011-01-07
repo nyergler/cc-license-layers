@@ -19,7 +19,7 @@ img {
 #container { 
     position:relative; 
     width: 960px;
-    height: 460px;
+    height: 500px;
     margin: auto;
 }
 
@@ -33,7 +33,7 @@ img {
     
     position: absolute; 
     left: 100; 
-    top: 100;
+    top: 125;
     
     width: 201px; 
     height: 208px; 
