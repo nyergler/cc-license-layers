@@ -12,13 +12,28 @@
 
 $(document).ready(function() {
 
+    // when a license layer (or the CC front-piece) is clicked...
     $(".layer").click(function(e) {
 
+	// shift to isometric projection
 	$(".layer").addClass("iso");
 
-	// after a delay (for transition), hide the CC layer
+	// wait for the transition...
 	window.setTimeout(function() {
+
+	    // explode the isometric view
 	    $(".iso").addClass("exploded");
+
+	    // attach the hover in/out listeners
+	    $(".exploded").hover(
+		function(e) {
+		    $(".exploded").addClass("dimmed");
+		    $(this).removeClass("dimmed").addClass("hover");
+		},
+		function(e) {
+		    $(".exploded").removeClass("hover").removeClass("dimmed");
+		});
+	    
 	}, 500);
 
     });
@@ -51,12 +66,6 @@ $(document).ready(function() {
 
     }); // on layer click    
     
-    $(".exploded").live("hover",
-	function(e) {	
-	    $(".iso[id!='" + $(this).attr("id") + "']").toggleClass("dimmed");
-	    $(this).toggleClass("hover");
-	});
-
     $("#getstarted").click(function(e) {
 	$("#cc").click();
 	e.preventDefault();
@@ -64,12 +73,18 @@ $(document).ready(function() {
 
     $("#reset").click(function(e) {
 
+	// unbind the hover listener
+	$(".exploded").unbind("hover");
+
+	// remove the exploded class (returning the layers to "iso")
 	$(".layer").removeClass("exploded");
 
+	// after the transition completes, return to the non-iso view
 	window.setTimeout(function() {
 	    $(".layer").removeClass("iso");
 	}, 500);
 
+	// do not follow the actual link
 	e.preventDefault();
     });
 
