@@ -34,7 +34,7 @@ $(document).ready(function() {
 		    $(".exploded").removeClass("hover").removeClass("dimmed");
 		});
 	    
-	}, 500);
+	}, 750);
 
     });
 
@@ -82,7 +82,7 @@ $(document).ready(function() {
 	// after the transition completes, return to the non-iso view
 	window.setTimeout(function() {
 	    $(".layer").removeClass("iso");
-	}, 500);
+	}, 750);
 
 	// do not follow the actual link
 	e.preventDefault();
