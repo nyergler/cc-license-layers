@@ -29,6 +29,26 @@ img {
     font-size: 0.7em;
 }
 
+.wrapped {
+    
+    position: absolute; 
+    left: 100; 
+    top: 125;
+    
+    width: 201px; 
+    height: 208px; 
+
+    opacity: 1;
+    background-color: #ffe;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    -moz-box-shadow: -5px 5px 5px #888;
+    -webkit-box-shadow: -5px 5px 5px #888;
+    box-shadow: -5px 5px 5px #888;
+
+}
+
 .layer {
     
     position: absolute; 
@@ -47,14 +67,13 @@ img {
     -webkit-box-shadow: -5px 5px 5px #888;
     box-shadow: -5px 5px 5px #888;
 
-    -moz-transition: -moz-transform 1s ease-in-out, opacity 0.5s; 
     -moz-transform: rotate(-45deg) skew(15deg, 15deg); 
-
-    -webkit-transition: -webkit-transform 1s ease-in-out, opacity 0.5s; 
     -webkit-transform: rotate(-45deg) skew(15deg, 15deg); 
-
-    -o-transition: all 1s ease-in-out; 
     -o-transform: rotate(-45deg) skew(15deg, 15deg); 
+
+    -moz-transition: -moz-transform 0.5s ease-in-out, opacity 0.5s; 
+    -webkit-transition: -webkit-transform 0.5s ease-in-out, opacity 0.5s; 
+    -o-transition: -o-transform 0.5s ease-in-out, opacity 0.5s; 
 }
 
 .hover {
@@ -65,11 +84,16 @@ img {
 
 .dimmed {
     opacity: 0.15 !important;
+
 }
 
 .exploded {
     border: 1px solid #666;
     opacity: 1;
+
+    -moz-transition: -moz-transform 1s ease-in-out, opacity 0.5s; 
+    -webkit-transition: -webkit-transform 1s ease-in-out, opacity 0.5s; 
+    -o-transition: all 1s ease-in-out; 
 }
 
 #cc { 
@@ -77,10 +101,6 @@ img {
     display: block;
     border: 1px solid #666;
     background-image : url('img/cc.png');
-
-    -moz-transition: -moz-transform 1s ease-in-out, opacity 1s ease-in-out !important;
-    -webkit-transition: -webkit-transform 1s ease-in-out, opacity 1s ease-in-out !important;
-    -o-transition: -o-transform 1s ease-in-out, opacity 1s ease-in-out !important;
 }
 
 #cc.exploded { 
@@ -89,6 +109,11 @@ img {
     -moz-transform: rotate(-45deg) skew(15deg, 15deg) translate(10em,-10em); 
     -webkit-transform: rotate(-45deg) skew(15deg, 15deg) translate(10em,-10em); 
     -o-transform: rotate(-45deg) skew(15deg, 15deg) translate(10em,-10em);
+
+    -moz-transition: -moz-transform 1s ease-in-out, opacity 1s ease-in-out !important;
+    -webkit-transition: -webkit-transform 1s ease-in-out, opacity 1s ease-in-out !important;
+    -o-transition: -o-transform 1s ease-in-out, opacity 1s ease-in-out !import
+
 }
 
 #machine {

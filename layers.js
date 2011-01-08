@@ -12,7 +12,24 @@
 
 $(document).ready(function() {
 
-    $(".layer").click(function(e) {
+    $(".wrapped").click(function(e) {
+
+	$(".wrapped").removeClass("wrapped").addClass("layer");
+
+	// layers are still stacked
+        //$(".layer").addClass("exploded");
+	    
+	// after a delay (for transition), hide the CC layer
+	window.setTimeout(function() {
+	    $(".layer").addClass("exploded");
+	    window.setTimeout(function() {
+		$("#cc").hide();
+	    }, 1000);
+	}, 500);
+
+    });
+
+    $(".layer").live("click", function(e) {
 	
 	if ($(this).hasClass("focused")) {
 	    // the element was previously focused, return to the stack
@@ -35,16 +52,7 @@ $(document).ready(function() {
 	    // -- focus on the layer and show the description
             $(this).addClass("focused");
 	    $("#" + $(this).attr("id") + "Desc").addClass("focusedtext");
-	} else  {
-	    // layers are still stacked
-            $(".layer").addClass("exploded");
-	    
-	    // after a delay (for transition), hide the CC layer
-	    window.setTimeout(function() {
-		$("#cc").hide();
-	    }, 1000);
-
-	}
+	} 
     }); // on layer click    
     
     $(".layer").hover(
