@@ -66,6 +66,8 @@ img {
     background-repeat: no-repeat;
     background-position: center;
 
+    cursor: pointer;
+
     -moz-box-shadow: -5px 5px 5px #888;
     -webkit-box-shadow: -5px 5px 5px #888;
     box-shadow: -5px 5px 5px #888;
@@ -101,6 +103,7 @@ img {
     display: block;
     border: 1px solid #666;
     background-image : url('img/cc.png');
+    cursor: pointer;
 }
 
 #cc.iso {
