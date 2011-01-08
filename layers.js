@@ -14,11 +14,8 @@ $(document).ready(function() {
 
     $(".layer").click(function(e) {
 
-	$(".layer").removeClass("wrapped").addClass("iso");
+	$(".layer").addClass("iso");
 
-	// layers are still stacked
-        //$(".layer").addClass("exploded");
-	    
 	// after a delay (for transition), hide the CC layer
 	window.setTimeout(function() {
 	    $(".iso").addClass("exploded");
@@ -32,7 +29,8 @@ $(document).ready(function() {
 	    // the element was previously focused, return to the stack
             $(this).removeClass("focused");
 	    $("#" + $(this).attr("id") + "Desc").removeClass("focusedtext");
-	    
+
+	    // show the intro text
 	    $("#intro").addClass("focusedtext");
 	    
 	} else if ($(this).hasClass("exploded")) {
@@ -50,6 +48,7 @@ $(document).ready(function() {
             $(this).addClass("focused");
 	    $("#" + $(this).attr("id") + "Desc").addClass("focusedtext");
 	} 
+
     }); // on layer click    
     
     $(".exploded").live("hover",
@@ -73,4 +72,20 @@ $(document).ready(function() {
 
 	e.preventDefault();
     });
+
+    $(document).click(function(e) {
+
+	// don't handle layer or anchor clicks
+	if (!$(e.target).hasClass("layer") &&
+	    !$(e.target).attr("href")) {
+
+	    // unfocus all layers
+            $(".iso").removeClass("focused");
+            $(".description").removeClass("focusedtext");
+
+	    // show the intro text
+	    $("#intro").addClass("focusedtext");
+	}
+    });
+
 });
