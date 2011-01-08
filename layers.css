@@ -29,7 +29,7 @@ img {
     font-size: 0.7em;
 }
 
-.wrapped {
+.layer {
     
     position: absolute; 
     left: 100; 
@@ -47,9 +47,12 @@ img {
     -webkit-box-shadow: -5px 5px 5px #888;
     box-shadow: -5px 5px 5px #888;
 
+    -moz-transition: -moz-transform 0.5s ease-in-out, opacity 0.5s; 
+    -webkit-transition: -webkit-transform 0.5s ease-in-out, opacity 0.5s; 
+    -o-transition: -o-transform 0.5s ease-in-out, opacity 0.5s; 
 }
 
-.layer {
+.iso {
     
     position: absolute; 
     left: 100; 
@@ -71,9 +74,6 @@ img {
     -webkit-transform: rotate(-45deg) skew(15deg, 15deg); 
     -o-transform: rotate(-45deg) skew(15deg, 15deg); 
 
-    -moz-transition: -moz-transform 0.5s ease-in-out, opacity 0.5s; 
-    -webkit-transition: -webkit-transform 0.5s ease-in-out, opacity 0.5s; 
-    -o-transition: -o-transform 0.5s ease-in-out, opacity 0.5s; 
 }
 
 .hover {
@@ -103,16 +103,19 @@ img {
     background-image : url('img/cc.png');
 }
 
+#cc.iso {
+}
+
 #cc.exploded { 
     opacity: 0 !important;
 
-    -moz-transform: rotate(-45deg) skew(15deg, 15deg) translate(10em,-10em); 
-    -webkit-transform: rotate(-45deg) skew(15deg, 15deg) translate(10em,-10em); 
-    -o-transform: rotate(-45deg) skew(15deg, 15deg) translate(10em,-10em);
+    -moz-transform: rotate(-45deg) skew(15deg, 15deg) translate(20em,-20em); 
+    -webkit-transform: rotate(-45deg) skew(15deg, 15deg) translate(20em,-20em); 
+    -o-transform: rotate(-45deg) skew(15deg, 15deg) translate(20em,-20em);
 
     -moz-transition: -moz-transform 1s ease-in-out, opacity 1s ease-in-out !important;
     -webkit-transition: -webkit-transform 1s ease-in-out, opacity 1s ease-in-out !important;
-    -o-transition: -o-transform 1s ease-in-out, opacity 1s ease-in-out !import
+    -o-transition: -o-transform 1s ease-in-out, opacity 1s ease-in-out !important
 
 }
 
